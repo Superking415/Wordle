@@ -1,0 +1,174 @@
+body {
+    background-image: url('../img/achtergrond.png');
+    background-size: cover;
+    display: flex;
+    flex-direction: column; /* Add this line */
+    justify-content: center;
+    align-items: center; /* Add this line */
+    overflow: hidden;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(100vh);
+    }
+    60% {
+        transform: translateY(-30px);
+    }
+    80% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+h1 {
+    position: relative;
+    font-size: 150px;
+    margin-top: 140px;
+    letter-spacing: 20px;
+    -webkit-text-stroke: 1px black;
+    color: white;
+    font-family: Bernard MT Condensed;
+    text-shadow: 12px 12px 12px rgba(0, 0, 0, 0.3);
+    animation: bounce 1s; /* Adjust animation duration here */
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Add this line to center the buttons horizontally */
+    gap: 40px;
+    margin-top: 90px;
+    animation: bounce 3s;
+}
+
+.button {
+    background-color: #996d49;
+    color: white;
+    border: solid 3px black;
+    padding: 10px 60px; /* Decrease vertical padding here */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 50px;
+    font-family: Bernard MT Condensed;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    border-radius: 100px;
+    width: 130%;
+    text-shadow: 12px 12px 12px rgba(0, 0, 0, 0.3);
+}
+
+.button:last-child {
+    background-color: #533420;
+}
+
+.button:hover {
+    background-color: #E76F51;
+    transform: scale(1.1); /* Add this line */
+}
+
+#ship {
+    position: absolute;
+    top: 13%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: float 10s linear infinite; /* Change ease-in-out to linear */
+    width: 250px;
+    height: auto;
+}
+
+@keyframes float {
+    0% {
+        transform: translate(-50%, -50%) translateX(-100%) translateY(0px);
+    }
+    25% {
+        transform: translate(-50%, -50%) translateX(-50%) translateY(-20px); /* Adjust this value */
+    }
+    50% {
+        transform: translate(-50%, -50%) translateX(0%) translateY(0px);
+    }
+    75% {
+        transform: translate(-50%, -50%) translateX(50%) translateY(20px); /* Adjust this value */
+    }
+    100% {
+        transform: translate(-50%, -50%) translateX(100%) translateY(0px);
+    }
+}
+
+
+
+.speaker {
+    height: 60px;
+    width: 60px;
+    position: absolute;
+    top: 5%; /* Adjust this value as needed */
+    right: 5%;
+    overflow: hidden;
+    /* rest of your CSS */
+
+	span {
+		display: block;
+		width: 16px;
+		height: 16px;
+		background: black;
+		margin: 22px 0 0 4px;
+
+		&:after {
+			content: '';
+			position: absolute;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-color: transparent black transparent transparent;
+			border-width: 20px 28px 20px 30px;
+			left: -26px;
+			top: 10px;
+		}
+
+		&:before {
+			transform: rotate(45deg);
+			border-radius: 0 50px 0 0;
+			content: '';
+			position: absolute;
+			width: 10px;
+			height: 10px;
+			border-style: double;
+			border-color: #fff;
+			border-width: 14px 14px 0 0;
+			left: 36px;
+			top: 18px;
+			transition: all 0.2s ease-out;
+		}
+	}
+
+	&:hover {
+
+		span:before {
+			transform: scale(.8) translate(-3px, 0) rotate(42deg);		
+    }
+	}
+  
+  &.mute {
+    span:before {
+			transform: scale(.5) translate(-15px, 0) rotate(36deg);
+      opacity: 0;
+    }
+  }
+}
+
+body {
+  color: #fff;
+  font-family: arial, sans-sarif;
+  background-color: #333;
+  text-align: center;
+}
+.guess-row input {
+    -webkit-user-select: none; /* Voor oudere versies van Chrome/Safari */
+    -moz-user-select: none; /* Voor oudere versies van Firefox */
+    -ms-user-select: none; /* Voor oudere versies van IE/Edge */
+    user-select: none; /* Standaard */
+}

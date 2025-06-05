@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordle Spel</title>
+    <link rel="stylesheet" href="./style/wordle1.css">
+</head>
+<body>
+    <div id="score-display">Score: 0</div>
+    <div id="game-container">
+        <h1 id="category-display"></h1>
+        <div id="guess-rows"></div>
+        <button id="gok" onclick="checkGuess()">✓</button>
+        <div id="result-display"></div>
+        <button id="new-game-button" style="display: none;" onclick="newGame()">Nieuw Spel</button>
+    </div>
+    
+    <script src="script/wordle1.js"></script>
+</body>
+</html>

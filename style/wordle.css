@@ -1,0 +1,144 @@
+body {
+    background-image: url('../img/achtergrond.png');
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scroll due to blur */
+}
+
+#game-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(153, 109, 73, 0.9);
+    border-radius: 10px;
+    text-align: center;
+    position: relative; /* Needed for the pseudo-elements */
+    box-shadow: 0 0 30px 20px rgba(153, 109, 73, 0.5); /* Adding additional shadow to enhance blur effect */
+}
+
+#game-container::before, #game-container::after {
+    content: '';
+    position: absolute;
+    top: -40px;
+    left: -40px;
+    right: -40px;
+    bottom: -40px;
+    z-index: -1;
+    background: inherit;
+    border-radius: inherit;
+    filter: blur(30px);
+    opacity: 0.6;
+}
+
+#game-container::before {
+    top: -60px;
+    left: -60px;
+    right: -60px;
+    bottom: -60px;
+    filter: blur(40px);
+    opacity: 0.4;
+}
+
+#word-display {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.guess-row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.guess-row input {
+    width: 30px; /* Breedte van elk blok */
+    height: 30px; /* Hoogte van elk blok */
+    background-color: #533420;
+    text-align: center;
+    font-size: 1.2em;
+    margin-right: 5px; /* Ruimte tussen blokken */
+    border: none; /* Rand verwijderen */
+    border-radius: 3px;
+    color: white;
+    font-family: 'Courier New', Courier, monospace; /* Passend lettertype voor letters */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Schaduw toevoegen */
+}
+
+
+#result-display {
+    margin-bottom: 10px;
+}
+
+#score-display {
+    position: absolute;
+    left: 10px;
+    top: 50px; /* Adjust based on the height of the game container */
+    font-size: 1.2em;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#gok {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    border: none;
+    background-color: #a26b3f;
+    border-radius: 50px;
+}
+
+.correct {
+    background-color: green;
+    color: white;
+}
+
+.misplaced {
+    background-color: orange;
+    color: white;
+}
+
+.wrong {
+    background-color: red;
+    color: white;
+}
+.guess-row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.guess-row input {
+    width: 30px; /* Breedte van elk blok */
+    height: 30px; /* Hoogte van elk blok */
+    background-color: #533420;
+    text-align: center;
+    font-size: 1.2em;
+    margin-right: 5px; /* Ruimte tussen blokken */
+    border: none; /* Rand verwijderen */
+    border-radius: 3px;
+    color: white;
+    font-family: 'Courier New', Courier, monospace; /* Passend lettertype voor letters */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Schaduw toevoegen */
+}
+
+.guess-row input.correct {
+    background-color: green;
+}
+
+.guess-row input.misplaced {
+    background-color: orange;
+}
+
+.guess-row input.wrong {
+    background-color: red;
+}
+.guess-row input {
+    -webkit-user-select: none; /* Voor oudere versies van Chrome/Safari */
+    -moz-user-select: none; /* Voor oudere versies van Firefox */
+    -ms-user-select: none; /* Voor oudere versies van IE/Edge */
+    user-select: none; /* Standaard */
+}

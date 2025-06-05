@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/reset.css">
+    <link rel="stylesheet" href="style/index.css">
+    <script src="script/index.js" defer></script>
+    <title>homepage</title>
+</head>
+<body>
+    <audio id="bgm" loop autoplay>
+        <source src="music/liedje2.mp3" type="audio/mpeg">
+    </audio>
+    <button id="shuffleAudio">Shuffle Playlist</button>
+    
+    <img id="ship" src="img/svg schip.svg" alt="Pirate ship">
+    <h1>WORDLE</h1>
+    <div class="buttons">
+        <a href="wordle.html" class="button easy">Makkelijk</a>
+        <a href="wordle1.html" class="button hard">Moeilijk</a>
+    </div>
+
+    <a href="#" class="speaker">
+      <span></span>
+    </a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    var bgm = document.getElementById("bgm");
+    var shuffleAudioBtn = document.getElementById("shuffleAudio");
+    var speakerBtn = document.querySelector(".speaker");
+
+    var songs = [
+        "music/liedje.mp3",
+        "music/liedje2.mp3",
+        "music/liedje3.mp3",
+        "music/liedje4.mp3",
+        "music/liedje5.mp3",
+        "music/liedje6.mp3"
+    ];
+
+    shuffleAudioBtn.addEventListener("click", function() {
+        var randomSong = songs[Math.floor(Math.random() * songs.length)];
+        bgm.src = randomSong;
+        bgm.play();
+    });
+
+    speakerBtn.addEventListener("click", function(e) {
+        e.preventDefault();
+        if (bgm.paused) {
+            bgm.play();
+        } else {
+            bgm.pause();
+        }
+        speakerBtn.classList.toggle('mute');
+    });
+});
+    </script>
+</body>
+</html>
