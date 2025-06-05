@@ -1,5 +1,6 @@
-# p4-project-team-wordle
-p4-project-team-wordle created by GitHub Classroom
+Wordle spel
+
+https://superking415.github.io/Wordle/
 
 
 Dit spel is te spelen op telefoon, tablet en laptop.
